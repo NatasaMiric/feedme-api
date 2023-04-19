@@ -8,14 +8,21 @@ Repository for the front-end application:
 
 ## Table of Content
 
-* [Project Goals](#Project-Goals)
-* [Agile implementation and planing](#Agile-implementation-and-planing)
-* [User Stories](#User-Stories)
-* [Database Design](#Database-design)
-* [Technologies Used](#Technologies-Used)
-* [Testing](#Testing)
-* [Deployment](#Deployment)
-* [Acknowledgement](#Acknowledgement)
+[Project Goals](#Project-Goals)
+
+[Agile implementation and planing](#Agile-implementation-and-planing)
+
+[User Stories](#User-Stories)
+
+[Database Design](#Database-design)
+
+[Technologies Used](#Technologies-Used)
+
+[Testing](#Testing)
+
+[Deployment](#Deployment)
+
+[Acknowledgement](#Acknowledgement)
 
 ---------------------------------------------
 ## Project Goals
@@ -35,7 +42,7 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 ## Database Design
 
-![](docs/images/database_erd.png)
+![](docs/images/erd.png)
 
 ## Technologies Used
 
