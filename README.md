@@ -82,6 +82,23 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 ### Manual testing 
 
+Testing The Profile App
+
+Screenshot are provided in comment section of the corresponding user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26047295
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Profile List | Get all profiles list as logged out and logged in user| Go to profiles page,and check if profiles are listed in logged out state, then log in | All profiles listed in both cases | Pass |
+| Profile Detail View | Get profile detail view by specific id as logged in and logged out user | Go to profiles page and enter an existing id in url field in logged out state,repeat the same after logging in | The Profile Details are present | Pass |
+| Get profile detail view by nonexisting id as logged in and logged out user  | not found 404 error | Go to profiles page and enter an nonexisting id in url field in logged out state,repeat the same after logging in | We got the 404 error | Pass |
+| Profile Detail Update | as logged in user we can edit our profile | Go to profiles page and logg in,then enter your id in url field that will redirect to profile detail page | The update form is present on the page | Pass |
+|  | Not possible to edit someone else's profile | Go to profiles page and logg in,then enter  id from other user in url field that will redirect to profile detail page | The update form is not present on the page | Pass|
+| Authorization(isOwner permission) | As logged out user is-owner field is false on all profiles listed on the page | Go to profiles page and check is_owner fields | All of them are false | Pass |
+|  | As logged out user my profile detail shows is_owner false | Go to profiles page and enter a corresponding id in url to user  | As expected, is_owner field is false |Pass |
+| | As logged in user is_owner field is true on the profile detail list of currently logged in user and false on the rest of the profiles | Go to profiles page and check profile list | Is_owner field is true on logged in user field and false on the rest | Pass |
+|  | As logged in user, on the profile detail page of the logged-in user, is_owner is true | Go to logged in users page by adding a corresponding id to profiles url and that will redirect to profile detail page of the logged in user | is_owner field is true | Pass |
+|  | As logged in user, on the profile detail page of other users, is_owner is false | Go to profiles page and add an id from other user to profiles url and that will redirect to profile detail page of the other user | is_owner field is false | Pass |
 
 
 ## Deployment
