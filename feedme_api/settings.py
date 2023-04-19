@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'profiles',
+    'recipes',
 ]
 
 SITE_ID = 1
