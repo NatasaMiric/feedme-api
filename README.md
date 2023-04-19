@@ -33,7 +33,7 @@ The goal for this API is to provide a backend service to allow the FeedMe front-
 
 The project was developed using an agile approach by defining the epics and user stories that were implemented in 5 sprints, where each lasted one week. 
 
-I used GitHub project for planing and creating epics and user stories that were broken into tasks and each user story had assigned label according to the epic that it belong to. MoSCoW prioritization was assigned to the each user story in order to ensure that all core features are completed first. 
+I used GitHub project for planing and creating epics and user stories that were broken into tasks and each user story had assigned label according to the app that it belong to and connected to corresponding epic. MoSCoW prioritization was assigned to the each user story in order to ensure that all core features are completed first. 
 
 I decided to have one Kanban board where will I implement issues for both api and frontend application which I considered more practical and can be accessed [here](https://github.com/users/NatasaMiric/projects/4) in order to see more details for each ticket. 
 
