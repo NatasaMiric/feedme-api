@@ -21,7 +21,7 @@ class Profile(models.Model):
         return f"{self.owner}'s profile"
 
 
-# this code was used from Code Institute drf-api walkthrough project
+# Code was taken from Code Institute drf-api walkthrough project
 # https://github.com/Code-Institute-Solutions/drf-api/blob/9ecb7addb100acb4223c6690b549edd4a9ed16a0/profiles/models.py
 
 def create_profile(sender, instance, created, **kwargs):

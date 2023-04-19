@@ -80,6 +80,10 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 ## Testing
 
+### Manual testing 
+
+
+
 ## Deployment
 
 ## Acknowledgement
