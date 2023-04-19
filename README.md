@@ -68,7 +68,7 @@ I decided to have one Kanban board where will I implement issues for both api an
 * HTML
 * Python version 3.8.1
 * Django 3.2.18 - main framework used for application creation
-* Django REST Framework -  used for creating API
+* Django REST Framework 3.14.0 -  used for creating API
 * Django Allauth - used for authentication, registration & account management
 * Pillow 8.2.0
 * Git - used for version control
