@@ -67,14 +67,15 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 * HTML
 * Python version 3.8.1
-* Django 3.2 - main framework used for application creation
+* Django 3.2.18 - main framework used for application creation
 * Django REST Framework -  used for creating API
 * Django Allauth - used for authentication, registration & account management
+* Pillow 8.2.0
 * Git - used for version control
 * GitHub - project repository
 * Heroku - used for hosting the application
 * ElephantSQL - PostgreSQL database hosting service.
-* Cloudinary - for image storing
+* Cloudinary 1.32.0 - for free image hosting
 * Code Institute GitPod Full Template - Using the GitPod Full Template from the Code Institute for my project.
 
 ## Testing
