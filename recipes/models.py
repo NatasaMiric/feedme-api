@@ -29,7 +29,7 @@ class Recipe(models.Model):
         ('hard', 'Hard')
     ]
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     ingredients = models.TextField(blank=True)
     instructions = models.TextField(blank=True)
