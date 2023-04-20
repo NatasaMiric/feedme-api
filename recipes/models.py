@@ -37,7 +37,7 @@ class Recipe(models.Model):
     difficulty = models.CharField(
         max_length=25, choices=DIFFICULTY, default=''
         )
-    cooking_time = models.IntegerField(blank=False)
+    cooking_time = models.CharField(max_length=10, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     recipe_image = models.ImageField(

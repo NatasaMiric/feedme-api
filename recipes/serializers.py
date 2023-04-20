@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from posts.models import Recipe
+from recipes.models import Recipe
 
 
 class RecipeSerializer(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
-    def validate_image(self, value):
+    def validate_recipe_image(self, value):
         if value.size > 1024 * 1024 * 3:
             raise serializers.ValidationError(
                 'The image size is larger than 3MB!'
