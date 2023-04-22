@@ -3,6 +3,10 @@ from recipes.models import Recipe
 
 
 class RecipeSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Recipe model
+    Added method for validating the image size
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')

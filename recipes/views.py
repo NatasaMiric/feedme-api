@@ -9,12 +9,12 @@ from feedme_api.permissions import IsOwnerOrReadOnly
 
 class RecipeList(APIView):
     """
-    List all Recipes and create a recipe as logged in user, 
+    List all Recipes and create a recipe as logged in user,
     recipe related to User instance
     """
     serializer_class = RecipeSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    
+
     def get(self, request):
         recipes = Recipe.objects.all()
         serializer = RecipeSerializer(
@@ -52,7 +52,7 @@ class RecipeDetail(APIView):
             return recipe
         except Recipe.DoesNotExist:
             raise Http404
-    
+
     def get(self, request, pk):
         recipe = self.get_object(pk)
         serializer = RecipeSerializer(
