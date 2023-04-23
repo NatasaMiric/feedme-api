@@ -20,13 +20,13 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = [
             'id', 'owner', 'is_owner', 'profile_id', 'profile_image',
-            'created_at', 'updated_at', 'recipe', 'content', 
+            'created_at', 'updated_at', 'recipe', 'content',
         ]
 
 
 class CommentDetailSerializer(CommentSerializer):
     """
     Serializer for the Comment model used in Detail view
-    Post is a read only field so that we dont have to set it on each update
+    Recipe is a read only field so that we dont have to set it on each update
     """
     recipe = serializers.ReadOnlyField(source='recipe.id')

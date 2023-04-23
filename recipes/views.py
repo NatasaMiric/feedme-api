@@ -38,8 +38,8 @@ class RecipeList(APIView):
 
 class RecipeDetail(APIView):
     """
-    Recipe Detail View to retrieve a recipe, update a recipe
-    and delete a recipe
+    Recipe Detail View to retrieve a recipe, and update a recipe
+    and delete a recipe if you own it
     """
 
     permission_classes = [IsOwnerOrReadOnly]
