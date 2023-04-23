@@ -5,7 +5,7 @@ from likes.models import Like
 
 class LikeSerializer(serializers.ModelSerializer):
     """
-    Serializer for the Like model.  
+    Serializer for the Like model.
     The create method handles the duplicate likes.
     """
     owner = serializers.ReadOnlyField(source='owner.username')
