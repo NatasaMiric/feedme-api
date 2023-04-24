@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import generics, permissions, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from feedme_api.permissions import IsOwnerOrReadOnly
 from .models import Recipe
 from .serializers import RecipeSerializer
@@ -19,10 +20,23 @@ class RecipeList(generics.ListCreateAPIView):
 
     filter_backends = [
         filters.OrderingFilter,
+        filters.SearchFilter,
+        DjangoFilterBackend
     ]
+
     ordering_fields = [
         'likes_count',
         'comments_count',
+    ]
+
+    search_fields = [
+        'owner__username',
+        'title'
+    ]
+
+    filterset_fields = [
+        'category',
+        'difficulty'
     ]
 
     def perform_create(self, serializer):
