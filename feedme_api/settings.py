@@ -43,6 +43,9 @@ ALLOWED_HOSTS = [
    'localhost',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-natasamiric-feedmeapi-99uizk76jao.ws-eu95.gitpod.io/"
+    ]
 
 # Application definition
 
@@ -126,7 +129,6 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     ]
 
 CORS_ALLOW_CREDENTIALS = True
-
 
 ROOT_URLCONF = 'feedme_api.urls'
 
