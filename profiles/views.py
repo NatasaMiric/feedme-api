@@ -4,7 +4,7 @@ from feedme_api.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
 
-# this code is based on the DRF walkthrough videos
+# This code is based on the Code Institute Walkthrough drf_api project
 
 
 class ProfileList(generics.ListAPIView):

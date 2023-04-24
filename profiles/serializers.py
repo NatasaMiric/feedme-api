@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Profile
 
+# This code is based on the Code Institute Walkthrough drf_api project
+
 
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
