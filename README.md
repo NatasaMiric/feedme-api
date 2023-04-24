@@ -2,7 +2,7 @@
 
 ## Deployed project and repository
 
-The live app can be accessed at:
+The live app can be accessed at: [FeedMe API](https://feedme-api.herokuapp.com/)
 
 Repository for the front-end application: 
 
@@ -31,7 +31,7 @@ The goal for this API is to provide a backend service to allow the FeedMe front-
 
 ## Agile implementation and planing
 
-The project was developed using an agile approach by defining the epics and user stories that were implemented in 5 sprints, where each lasted one week. 
+The project was developed using an Agile approach by defining the epics and user stories that were implemented in 5 sprints, where each lasted one week. 
 
 I used GitHub project for planing and creating epics and user stories that were broken into tasks and each user story had assigned label according to the app that it belong to and connected to corresponding epic. MoSCoW prioritization was assigned to the each user story in order to ensure that all core features are completed first. 
 
@@ -39,9 +39,9 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 ## User Stories
 
-* Project set up
+* Project set up 
 
-    As a developer I want to setup my project and deploy so that I can start developing my app.
+    As a developer I want to setup my project and prepare for deployment so that I can start developing my app.
 
 * Create the user profile API
 
@@ -49,15 +49,32 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 * Create the recipe API
 
-    As a user I can store all recipes in a database so that I can manage them.  
+    As a user I can store all recipes in a database so that I can retrieve, update and delete them.  
 
 * Create the comment API  
 
-    As a logged-in user I can add comments to a recipe so that I can share my thoughts about the recipe.
+    As a logged-in user I can store comments in the database so that I can retrieve, update and delete them.
 
 * Create the like API
 
     As a user I can like a recipe so that I can show my support to the author of the recipe.
+
+* Create bookmark API
+
+    As a logged in user I can save/bookmark recipes so that I can store in one place all recipes that I like the most.
+
+* Search recipes API
+
+    As a user I can search data by author and recipe title so that I can find the recipe that interests me.
+
+* Filter recipes API
+
+    As a user I can filter data by category and difficulty so that I can easier find the recipe that I need.
+
+* Filter comments API
+
+    As a user I can retrieve all the comments associated with a given recipe so that I can easily access to all comments related to that recipe.
+
 
 ## Database Design
 
@@ -65,12 +82,19 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 ## Technologies Used
 
+### Languages
 * HTML
 * Python version 3.8.1
+
+### Frameworks, Libraries & Programs
 * Django 3.2.18 - main framework used for application creation
 * Django REST Framework 3.14.0 -  used for creating API
 * Django Allauth - used for authentication, registration & account management
-* Pillow 8.2.0
+* Django filters
+* gunicorn 20.1.0 - a Python WSGI HTTP Server
+* dj-database-url 0.5.0 - allows us to utilise the DATABASE_URL variable
+* psycopg2-2.9.6- a postgres database adapter which allow us to connect with a postgres database.
+* PostgreSQL - used as a database management system.
 * Git - used for version control
 * GitHub - project repository
 * Heroku - used for hosting the application
@@ -84,7 +108,7 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 Testing The Profile App
 
-Screenshot are provided in comment section of the corresponding user story:
+Screenshot of manual testing are provided in comment section of the corresponding user story:
 https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26047295
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
@@ -100,6 +124,21 @@ https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=260472
 |  | As logged in user, on the profile detail page of the logged-in user, is_owner is true | Go to logged in users page by adding a corresponding id to profiles url and that will redirect to profile detail page of the logged in user | is_owner field is true | Pass |
 |  | As logged in user, on the profile detail page of other users, is_owner is false | Go to profiles page and add an id from other user to profiles url and that will redirect to profile detail page of the other user | is_owner field is false | Pass |
 
+Testing The Recipes App
+
+Screenshot of manual testing are provided in comment section of the corresponding user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26050307
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Recipe list | If the user is logged out he should be able to see the list of all profiles | Go to recipes url | All recipes are listed | Pass |
+| | If the user is logged in he should be able to see the list of all profiles| Go to recipes url  | All recipes are listed | Pass |
+| Recipe Detail view | If the user is logged out he should be able to see the recipe details of his and other user's recipes| Go to recipes page and add an existing id to url by your own recipes and then repeat the same by typing id from another user  | Recipe details are present  | Pass |
+|  | If the user is logged in he should be able to see the recipe details of his and other user's recipes| Go to recipes page and add an existing id to url by your own recipes and then repeat the same by typing id from another user | Recipe details are present  | Pass |
+|  | If the user tries to fetch a recipe by nonexisting id, he should get an 404 error message  | Go to recipes page and add an nonexisting id to url  | The 404 error message 'not found' is shown | Pass |
+| Create a recipe | If the user is logged in,he should be able to create a new recipe  | Go to recipes page and fill-out the form on bottom of the page then click 'post' | New recipe is created | Pass |
+| Update a recipe | As logged in user and owner of the recipe,user should be able to update a recipe | Go to recipes page and add a specific id in url that belongs to logged in user. The user should get the access to recipe detail page where the form for updating is present. Update the fields and then click 'put' | Taken to correct page and update form present. Recipe successfully updated. | Pass |
+| Delete a recipe | As logged in user and owner of the recipe,user should be able to delete a recipe | Go to recipes page and add a specific id in url that belongs to logged in user. The user should get the access to recipe detail page where he will find delete button and click on it| Recipe has been deleted | Pass |
 
 ## Deployment
 
