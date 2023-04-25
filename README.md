@@ -106,39 +106,70 @@ I decided to have one Kanban board where will I implement issues for both api an
 
 ### Manual testing 
 
-Testing The Profile App
+* Testing The Profile App
 
-Screenshot of manual testing are provided in comment section of the corresponding user story:
+Screenshot of manual testing are provided in comment section of the respective user story:
 https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26047295
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | :--- | :--- | :--- | :--- | :--- |
 | Profile List | Get all profiles list as logged out and logged in user| Go to profiles page,and check if profiles are listed in logged out state, then log in | All profiles listed in both cases | Pass |
-| Profile Detail View | Get profile detail view by specific id as logged in and logged out user | Go to profiles page and enter an existing id in url field in logged out state,repeat the same after logging in | The Profile Details are present | Pass |
-| Get profile detail view by nonexisting id as logged in and logged out user  | not found 404 error | Go to profiles page and enter an nonexisting id in url field in logged out state,repeat the same after logging in | We got the 404 error | Pass |
-| Profile Detail Update | as logged in user we can edit our profile | Go to profiles page and logg in,then enter your id in url field that will redirect to profile detail page | The update form is present on the page | Pass |
-|  | Not possible to edit someone else's profile | Go to profiles page and logg in,then enter  id from other user in url field that will redirect to profile detail page | The update form is not present on the page | Pass|
+| Profile Detail View | Get profile detail view by specific id as logged in and logged out user | Go to profiles page and entered an existing id in url field in logged out state, repeated the same after logging in | The Profile Details are present | Pass |
+| Get profile detail view by nonexisting id as logged in and logged out user  | not found 404 error | Go to profiles page and enter an nonexisting id in url field in logged out state, repeated the same after logging in |  The 404 error has been displayed | Pass |
+| Profile Detail Update | As logged in user, user should be able to edit a profile that he owns | Go to profiles page and logg in, then entered my id in url field that redirected me to profile detail page | The update form is present on the page | Pass |
+|  | Not possible to edit someone else's profile | Navigated to profiles page and logged in, entered  id from other user in url field that redirected me to profile detail page | The update form is not present on the page | Pass|
 | Authorization(isOwner permission) | As logged out user is-owner field is false on all profiles listed on the page | Go to profiles page and check is_owner fields | All of them are false | Pass |
 |  | As logged out user my profile detail shows is_owner false | Go to profiles page and enter a corresponding id in url to user  | As expected, is_owner field is false |Pass |
 | | As logged in user is_owner field is true on the profile detail list of currently logged in user and false on the rest of the profiles | Go to profiles page and check profile list | Is_owner field is true on logged in user field and false on the rest | Pass |
 |  | As logged in user, on the profile detail page of the logged-in user, is_owner is true | Go to logged in users page by adding a corresponding id to profiles url and that will redirect to profile detail page of the logged in user | is_owner field is true | Pass |
 |  | As logged in user, on the profile detail page of other users, is_owner is false | Go to profiles page and add an id from other user to profiles url and that will redirect to profile detail page of the other user | is_owner field is false | Pass |
 
-Testing The Recipes App
 
-Screenshot of manual testing are provided in comment section of the corresponding user story:
+* Testing The Recipes App
+
+Screenshot of manual testing are provided in comment section of the respective user story:
 https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26050307
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | :--- | :--- | :--- | :--- | :--- |
 | Recipe list | If the user is logged out he should be able to see the list of all profiles | Go to recipes url | All recipes are listed | Pass |
-| | If the user is logged in he should be able to see the list of all profiles| Go to recipes url  | All recipes are listed | Pass |
-| Recipe Detail view | If the user is logged out he should be able to see the recipe details of his and other user's recipes| Go to recipes page and add an existing id to url by your own recipes and then repeat the same by typing id from another user  | Recipe details are present  | Pass |
-|  | If the user is logged in he should be able to see the recipe details of his and other user's recipes| Go to recipes page and add an existing id to url by your own recipes and then repeat the same by typing id from another user | Recipe details are present  | Pass |
-|  | If the user tries to fetch a recipe by nonexisting id, he should get an 404 error message  | Go to recipes page and add an nonexisting id to url  | The 404 error message 'not found' is shown | Pass |
-| Create a recipe | If the user is logged in,he should be able to create a new recipe  | Go to recipes page and fill-out the form on bottom of the page then click 'post' | New recipe is created | Pass |
-| Update a recipe | As logged in user and owner of the recipe,user should be able to update a recipe | Go to recipes page and add a specific id in url that belongs to logged in user. The user should get the access to recipe detail page where the form for updating is present. Update the fields and then click 'put' | Taken to correct page and update form present. Recipe successfully updated. | Pass |
-| Delete a recipe | As logged in user and owner of the recipe,user should be able to delete a recipe | Go to recipes page and add a specific id in url that belongs to logged in user. The user should get the access to recipe detail page where he will find delete button and click on it| Recipe has been deleted | Pass |
+| | If the user is logged in he should be able to see the list of all profiles| Navigated to recipes url  | All recipes are listed | Pass |
+| Recipe Detail view | If the user is logged out he should be able to see the recipe details of his and other user's recipes| Navigated to recipes page and added an existing id to url of my own recipe and then repeated the same by typing id from another user  | Recipe details are present  | Pass |
+|  | If the user is logged in he should be able to see the recipe details of his and other user's recipes| Navigated to recipes page and add an existing id to url by my own recipe and then repeated the same by typing id from another user | Recipe details are present  | Pass |
+|  | If the user tries to fetch a recipe by nonexisting id, he should get an 404 error message  | Navigated to recipes page and added an nonexisting id to url  | The 404 error message 'not found' is shown | Pass |
+| Create a recipe | If the user is logged in,he should be able to create a new recipe  | Navigated to recipes page and fill-out the form on bottom of the page then click 'post' | New recipe is created | Pass |
+| Update a recipe | As logged in user and owner of the recipe,user should be able to update a recipe | Navigated to recipes page and add a specific id in url that belongs to logged in user. Got the access to recipe detail page where the form for updating is present. Updated the fields and then clicked 'put' | Taken to correct page and update form present. Recipe successfully updated. | Pass |
+| Delete a recipe | As logged in user and owner of the recipe,user should be able to delete a recipe | Navigated to recipes page and add a specific id in url that belongs to logged in user. Got the access to recipe detail page where delete button is present and clicked on it| Recipe has been deleted | Pass |
+
+
+* Testing Comments app
+
+Screenshot of manual testing are provided in comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26052261
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Comment List  | If the user is logged out or logged in,he should be able to see the list of all comments | Navigated to comments page in logged in and logged out state  | All comments are listed in both cases| Pass |
+| Create comment | If the user is logged in he should be able to create a comment | Navigated to comments page and found comment form on the bottom, underneath the comments list, filled out the form and clicked 'post' | The comment has been created | Pass |
+| Update comment| As logged in user and owner of the comment, user should be able to update his comment | Navigated to comments page and added a correct comment id to url to retrieve a particular comment that should be updated | Form for updating is present on the page and it is updated after changing the data and clicking on 'put' | Pass |
+| Delete comment| As logged in user and owner of the comment, user should be able to delete his comment | Navigated to comments page and added a correct comment id to url to retrieve a particular comment that should be deleted | Delete button is present on the page and comment is deleted after clicking on the button | Pass |
+
+
+* Testing Likes app
+
+Screenshot of manual testing are provided in comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26052843
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| List all likes | If the user is logged out or logged in,he should be able to see the list of all likes | Navigated to likes page in logged in and logged out state  | All likes are listed in both cases | Pass |
+| Like a recipe | If the user is logged in, user should be able to like a recipe | Navigated to likes page and found form on the bottom for liking a recipe, choosed recipe and clicked 'post' | The recipe has been liked | Pass|
+| Unlike a recipe | If the user is logged in, user should be able to delete a like | Navigated to likes page and then added to url an id of the like that you would like to delete. This has taken me to like detail page where delete button is. Clicked on button.  | The like has been deleted | Pass |
+| Handle duplicate likes | If the user tries to like the recipe that he already liked,he should get tha message about possible duplicate | Choosed the recipe that I already liked and clicked post | The message has been displayed | Pass |
+
+
+
+
 
 ## Deployment
 

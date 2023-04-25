@@ -9,10 +9,15 @@ class BookmarkSerializer(serializers.ModelSerializer):
     The create method handles the prevention of duplicate bookmarks.
     """
     owner = serializers.ReadOnlyField(source='owner.username')
+    is_owner = serializers.SerializerMethodField()
+
+    def get_is_owner(self, obj):
+        request = self.context['request']
+        return request.user == obj.owner
 
     class Meta:
         model = Bookmark
-        fields = ['id', 'created_at', 'owner', 'recipe']
+        fields = ['id', 'created_at', 'owner', 'is_owner', 'recipe']
 
     def create(self, validated_data):
         try:
