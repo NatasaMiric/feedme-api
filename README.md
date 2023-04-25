@@ -4,7 +4,7 @@
 
 The live app can be accessed here: [FeedMe API](https://feedme-api.herokuapp.com/)
 
-Repository for the front-end application: 
+Repository for the front-end application: https://github.com/NatasaMiric/feedme
 
 ## Table of Content
 
@@ -27,6 +27,8 @@ Repository for the front-end application:
 ---------------------------------------------
 ## Project Goals
 
+FeedMe is a recipes sharing platform where users can share their recipes with other's.
+The application consists of the React app and an API. Welcome to the Django Rest Framework API project section.
 The goal for this API is to provide a backend service to allow the FeedMe front-end application to perform Create, Read, Update, and Delete operations via the user interface.
 
 ## Agile implementation and planning
