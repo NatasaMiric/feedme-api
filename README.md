@@ -167,11 +167,51 @@ https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=260528
 | Unlike a recipe | If the user is logged in, user should be able to delete a like | Navigated to likes page and then added to url an id of the like that you would like to delete. This has taken me to like detail page where delete button is. Clicked on button.  | The like has been deleted | Pass |
 | Handle duplicate likes | If the user tries to like the recipe that he already liked,he should get tha message about possible duplicate | Choosed the recipe that I already liked and clicked post | The message has been displayed | Pass |
 
+* Testing Bookmarks app
 
+Screenshot of manual testing are provided in comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26098011
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| List all bookmarked recipes that currently logged in user owns | The user should be logged in to be able to see his bookmarked recipes | Navigated to bookmarks page | All the recipes of the currently logged in user are displayed | Pass |
+| Create bookmark | If logged in , the user should be able to create a bookmark | Navigated to bookmarks page, in the bookmark form choose recipe and clicked 'post' | The bookmark was created | Pass |
+| Delete bookmark| If logged in, user should be able to delete a bookmark | Navigated to the specific bookmark by adding bookmarks and id in url and clicked on delete button | Bookmark was deleted | Pass|
+| Retrieve bookmark from another user | User should not have an access to another user's bookmarks | Navigated to the specific bookmark by adding bookmarks and id in url from another user | The message 404 not found was displayed | Pass |
+| Bookmark again the same recipe | User should not be able to bookmarks the same recipe again | Navigated to bookmarks page and choose the recipe that is already bookmarked | The message 400 bad reques,possible duplicate has been displayed | Pass |
+| Retrieve bookmark by nonexisting id | User should not have an access to nonexisting bookmarks | Navigated to the specific bookmark by adding bookmarks and nonexisting id in url  | The message 404 not found was displayed | Pass |
+
+
+### Validators
+
+All python code has been run through the python validator without issues.
+
+### Bugs
 
 
 
 ## Deployment
 
+* set the following environment variables:    
+    * CLOUDINARY_URL
+    * DATABASE_URL
+    * DISABLE_COLLECTSTATIC
+    * SECRET_KEY
+    * DEV
+* installed the following libraries to handle database connection:
+    * psycopg2
+    * dj-database-url
+* configured dj-rest-auth library for JWTs
+* set allowed hosts
+* configured CORS:
+    * set allowed_origins
+* set default renderer to JSON
+* added Procfile with release and web commands
+* gitignored the env.py file
+* generated requirements.txt
+* deployed to Heroku
+
+
 ## Acknowledgement
 
+The project was based on [Code Institute DRF walkthrough project](https://github.com/Code-Institute-Solutions/drf-api) with several adjustments in order to create my own project. 
