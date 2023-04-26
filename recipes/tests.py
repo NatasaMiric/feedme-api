@@ -8,7 +8,7 @@ class RecipeListViewTests(APITestCase):
     def setUp(self):
         User.objects.create_user(username='john', password='pass')
 
-    def test_can_list_posts(self):
+    def test_can_list_recipes(self):
         john = User.objects.get(username='john')
         Recipe.objects.create(owner=john, title='a title')
         response = self.client.get('/recipes/')

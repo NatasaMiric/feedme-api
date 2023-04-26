@@ -188,9 +188,24 @@ https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=260980
 
 All python code has been run through the python validator without issues.
 
+
+### Automated testing
+
+Automated tests have been built to test the Recipes app, in total 7 tests. Tests are created for :
+
+* logged out users can list posts
+* logged in users can create a post
+* logged out users can't create a post
+* logged out users can retrieve a post with a valid id
+* logged out users can't retrieve a post with an invalid id
+* logged in users can update a post they own
+* logged in users can't update a post they don't own
+
+    ![](docs/images/automated-tests.png)
+
 ### Bugs
 
-
+No bugs has been detected at the moment of project finalization. 
 
 ## Deployment
 
