@@ -19,7 +19,7 @@ class Recipe(models.Model):
         ('vegetarian', 'Vegetarian'),
         ('condiments', 'Condiments'),
         ('breakfast', 'Breakfast'),
-        ('luch', 'Lunch'),
+        ('lunch', 'Lunch'),
         ('dinner', 'Dinner')
     ]
 
