@@ -15,7 +15,8 @@ class BookmarkList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        queryset = Bookmark.objects.filter(owner=user).order_by('-created_at')
+        queryset = Bookmark.objects.filter(
+            owner=user.id).order_by('-created_at')
         return queryset
 
     def perform_create(self, serializer):
