@@ -10,7 +10,7 @@ class BookmarkList(generics.ListCreateAPIView):
     Create a bookmark if authenticated.
     The perform_create method associates the bookmark with the logged in user.
     """
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = BookmarkSerializer
 
     def get_queryset(self):
