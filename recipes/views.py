@@ -35,6 +35,7 @@ class RecipeList(generics.ListCreateAPIView):
     ]
 
     filterset_fields = [
+        'bookmarks__owner__profile',
         'category',
         'difficulty'
     ]
