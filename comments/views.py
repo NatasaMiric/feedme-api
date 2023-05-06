@@ -10,7 +10,7 @@ class CommentList(generics.ListCreateAPIView):
     List comments or create a comment if logged in.
     """
     serializer_class = CommentSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Comment.objects.all()
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['recipe']
