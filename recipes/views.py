@@ -31,7 +31,8 @@ class RecipeList(generics.ListCreateAPIView):
 
     search_fields = [
         'owner__username',
-        'title'
+        'title',
+        'ingredients'
     ]
 
     filterset_fields = [
