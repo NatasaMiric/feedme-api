@@ -27,15 +27,18 @@ class RecipeList(generics.ListCreateAPIView):
     ordering_fields = [
         'likes_count',
         'comments_count',
+        'bookmarks__created_at',
     ]
 
     search_fields = [
         'owner__username',
         'title',
-        'ingredients'
+        'ingredients',
     ]
 
     filterset_fields = [
+        'owner__followed__owner__profile',
+        'owner__profile',
         'bookmarks__owner__profile',
         'category',
         'difficulty'
