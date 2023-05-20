@@ -40,11 +40,11 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
-   'localhost',
+   '8000-natasamiric-feedmeapi-99uizk76jao.ws-eu97.gitpod.io',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-natasamiric-feedmeapi-99uizk76jao.ws-eu95.gitpod.io/"
+    "8000-natasamiric-feedmeapi-99uizk76jao.ws-eu97.gitpod.io"
     ]
 
 # Application definition
