@@ -137,13 +137,15 @@ No bugs has been detected at the moment of project finalization.
 
 Workspace setup:
 
-    1. Set up a new repository on Github
-    2. Open the workspace on Gitpod using the green Gitpod button
-    3. In ther terminal enter the following command:
-     npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm
-    4. Enter y to confirm installing the create-react-app package
-    5. Start the app with:
-    npm start
+    1. Go to [Code Institute GitHub profile](https://github.com/Code-Institute-Org) and find [ci-full-template](https://github.com/Code-Institute-Org/ci-full-template) and click on use this template
+    2. Opne the workspace using the green Gitpod button
+    3. In terminal: install Django `pip install ‘django<4’` 
+                    create project `django-admin startproject PROJ_NAME .`
+                    install Cloudinary storage `pip install django-cloudinary-storage==0.3.0`
+                    install Pillow (Image Processing) `pip install Pillow==8.2.0` 
+    4. In settings.py, add cloudinary to installed apps and create storage
+    5. Start the app with python manage.py runserver
+
 
 Deployment to Heroku: 
 
