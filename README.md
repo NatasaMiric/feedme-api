@@ -129,6 +129,84 @@ Automated tests have been built to test the Recipes app, in total 7 tests. Tests
 
     ![](docs/images/automated-tests.png)
 
+
+### Manual testing 
+
+* Testing The Profile App
+
+Screenshots of manual testing are provided in the comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26047295
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Profile List | Get all profiles listed as logged out and logged-in user| Go to profiles page, check if profiles are listed in logged out state, then check the same in logged in state | All profiles are listed in both cases | Pass |
+| Profile Detail View | Get profile detail view by specific id as logged in and logged out user | Go to the the profiles page and entered an existing id in url field in logged out state, repeated the same after logging in | The Profile Details are present | Pass |
+| Get profile detail view by nonexisting id as logged in and logged out user  | not found 404 error | Go to the profiles page and enter a non-existing id in url field in logged out state, repeated the same after logging in |  The 404 error has been displayed | Pass |
+| Profile Detail Update | As logged in user, the user should be able to edit a profile that he owns | Go to profiles page and logged in, entered my id in url field that redirected me to the profile detail page | The update form is present on the page | Pass |
+|  | Not possible to edit someone else's profile | Navigated to profiles page and logged in, entered id from other user in url field that redirected me to profile detail page | The update form is not present on the page | Pass|
+| Authorization(isOwner permission) | As logged out user, is-owner field is false on all profiles listed on the page | Go to profiles page and check is_owner fields | All of them are false | Pass |
+|  | As logged out user my profile detail shows is_owner false | Go to profiles page and enter a corresponding id in url to user  | As expected, is_owner field is false |Pass |
+| | As logged in user is_owner field is true on the profile detail list of currently logged in user and false on the rest of the profiles | Go to the profiles page and check profile list | Is_owner field is true on logged in user field and false on the rest | Pass |
+|  | As logged in user, on the profile detail page of the logged-in user, is_owner is true | Go to logged in users page by adding an id to profiles url and that will redirect to profile detail page of the logged in user | is_owner field is true | Pass |
+|  | As logged in user, on the profile detail page of another users, is_owner is false | Go to profiles page and add an id from another user to profiles url and that will redirect to profile detail page of the other user | is_owner field is false | Pass |
+
+
+* Testing The Recipes App
+
+Screenshots of manual testing are provided in the comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26050307
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Recipe list | If the user is logged out he should be able to see the list of all recipes | Go to recipes url | All recipes are listed | Pass |
+| | If the user is logged in he should be able to see the list of all recipes | Navigated to recipes url  | All recipes are listed | Pass |
+| Recipe Detail view | If the user is logged out, he should be able to see the recipe details of his and another user's recipes | Navigated to recipes page and added an existing id to url of my recipe and then repeated the same by typing id from another user  | Recipe details are present  | Pass |
+|  | If the user is logged in, he should be able to see the recipe details of his and other user's recipes| Navigated to recipes page and add an existing id to url by my own recipe and then repeat the same by typing id from the another user | Recipe details are present  | Pass |
+|  | If the user tries to fetch a recipe by non-existing id, he should get a 404 error message  | Navigated to the recipes page and added an nonexisting id to url  | The 404 error message 'not found' is shown | Pass |
+| Create a recipe | If the user is logged in, he should be able to create a new recipe  | Navigated to the recipes page and filled-out the form on bottom of the page then click 'post' | New recipe is created | Pass |
+| Update a recipe | As logged in user and owner of the recipe, user should be able to update a recipe | Navigated to the recipes page and add a specific id in url that belongs to logged in user. Got the access to recipe detail page where the form for updating is present. Updated the fields and then clicked 'put' | Taken to correct page and update form present. Recipe successfully updated. | Pass |
+| Delete a recipe | As logged in user and owner of the recipe, the user should be able to delete a recipe | Navigated to the recipes page and added a specific id in url that belongs to logged in user. Got the access to the recipe detail page where delete button is present and clicked on it | Recipe has been deleted | Pass |
+
+
+* Testing Comments app
+
+Screenshot of manual testing are provided in comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26052261
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| Comment List  | If the user is logged out or logged in, he should be able to see the list of all comments | Navigated to the comments page in logged in and logged out state  | All comments are listed in both cases| Pass |
+| Create comment | If the user is logged in, the user should be able to create a comment | Navigated to the comments page and found comment form on the bottom, underneath the comments list, filled out the form and clicked 'post' | The comment has been created | Pass |
+| Update comment| As logged in user and owner of the comment, the user should be able to update his comment | Navigated to the comments page and added a correct comment id to url to retrieve a particular comment that should be updated | Form for updating is present on the page and it is updated after changing the data and clicking on 'put' | Pass |
+| Delete comment| As logged in user and owner of the comment, user should be able to delete his comment | Navigated to the comments page and added a correct comment id to url to retrieve a particular comment that should be deleted | Delete button is present on the page and comment is deleted after clicking on the button | Pass |
+
+
+* Testing Likes app
+
+Screenshots of manual testing are provided in the comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26052843
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| List all likes | If the user is logged out or logged in, he should be able to see the list of all likes | Navigated to the likes page  | All likes are listed in both cases | Pass |
+| Like a recipe | If the user is logged in, user should be able to like a recipe | Navigated to the likes page and found form on the bottom for liking a recipe, choosed a recipe and clicked 'post' | The recipe has been liked | Pass |
+| Unlike a recipe | If the user is logged in, user should be able to delete a like | Navigated to likes page and then added to url an id of the like that you would like to delete. This has taken me to like detail page where delete button is. Clicked on button.  | The like has been deleted | Pass |
+| Handle duplicate likes | If the user tries to like the recipe that he already liked, he should get the message about possible duplicate | Choosed the recipe that I already liked and clicked post | The message 400 bad request, possible duplicate has been displayed  | Pass |
+
+* Testing Bookmarks app
+
+Screenshots of manual testing are provided in the comment section of the respective user story:
+https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=26098011
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| :--- | :--- | :--- | :--- | :--- |
+| List all bookmarked recipes that currently logged in user owns | The user should be logged in to be able to see his bookmarked recipes | Navigated to bookmarks page | All the recipes of the currently logged in user are displayed | Pass |
+| Create bookmark | If logged in , the user should be able to create a bookmark | Navigated to bookmarks page, in the bookmark form choose recipe and clicked 'post' | The bookmark was created | Pass |
+| Delete bookmark| If logged in, user should be able to delete a bookmark | Navigated to the specific bookmark by adding bookmarks and id in url and clicked on delete button | Bookmark was deleted | Pass|
+| Retrieve bookmark from another user | User should not have an access to another user's bookmarks | Navigated to the specific bookmark by adding bookmarks and id in url from another user | The message 404 not found was displayed | Pass |
+| Bookmark again the same recipe | User should not be able to bookmarks the same recipe again | Navigated to bookmarks page and choose the recipe that is already bookmarked | The message 400 bad request, possible duplicate has been displayed | Pass |
+| Retrieve bookmark by nonexisting id | User should not have an access to nonexisting bookmarks | Navigated to the specific bookmark by adding bookmarks and nonexisting id in url  | The message 404 not found was displayed | Pass |
+
 ### Bugs
 
 No bugs has been detected at the moment of project finalization. 
