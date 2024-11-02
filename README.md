@@ -2,7 +2,7 @@
 
 ## Deployed project and repository
 
-The live app can be accessed here: [FeedMe API](https://feedme-api.herokuapp.com/)
+The live app can be accessed here: [FeedMe API](https://feedme-api-h1j3.onrender.com)
 
 Repository for the front-end application: https://github.com/NatasaMiric/feedme
 
@@ -103,8 +103,8 @@ I decided to have one Kanban board where will I implement issues for both API an
 * PostgreSQL - used as a database management system.
 * Git - used for version control
 * GitHub - project repository
-* Heroku - used for hosting the application
-* ElephantSQL - PostgreSQL database hosting service.
+* Heroku - used for hosting the application- UPDATE 02.11.2024-the app is migrated to Render
+* ElephantSQL - PostgreSQL database hosting service UPDATE 02.11.2024 - migrated to Neon
 * Cloudinary 1.32.0 - for free image hosting
 * Code Institute GitPod Full Template - Using the GitPod Full Template from the Code Institute for my project.
 
@@ -212,6 +212,7 @@ https://github.com/users/NatasaMiric/projects/4/views/1?pane=issue&itemId=260980
 No bugs has been detected at the moment of project finalization. 
 
 ## Deployment
+!!!!UPDATE 02.11.2024 - The app is migrated to Render
 
 Workspace setup:
 
